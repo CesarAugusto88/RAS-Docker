@@ -51,7 +51,8 @@ Os arquivos possuem as seguintes funções:
 
 # Passo 1 — Criar a aplicação Flask
 
-Use o comando o comando ```bash mkdir``` para criar os diretórios/pastas e o comando ```bash touch``` para criar os arquivos.
+Use o comando ```mkdir``` para criar os diretórios/pastas e o comando ```touch``` para criar os arquivos.
+
 Exemplos:
 ```bash
 mkdir projeto-flask
@@ -64,7 +65,7 @@ touch projeto-flask/app/app.py
 touch projeto-flask/app/requirements.txt
 ```
 
-Para vizualizar a árvore:
+Para visualizar a árvore:
 ```bash
 tree projeto-flask
 ``` 
