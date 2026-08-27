@@ -60,7 +60,7 @@ mkdir projeto-flask/app
 ```
 
 ```bash
-touch Dockerfile
+touch projeto-flask/Dockerfile
 touch projeto-flask/app/app.py
 touch projeto-flask/app/requirements.txt
 ```
@@ -70,7 +70,7 @@ Para visualizar a árvore:
 tree projeto-flask
 ``` 
 
-Conteúdo do app.py (use o editor de linha de comando nano ou vim):
+Conteúdo do app.py (***use o editor de linha de comando nano ou vim para editar os arquivos criados***):
 
 ```python
 from flask import Flask
