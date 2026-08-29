@@ -561,22 +561,23 @@ docker image prune -a
 
 # Resumo dos principais comandos
 
-| Comando            | Função                               |
-| ------------------ | ------------------------------------ |
-| `docker --version` | Verificar a versão do Docker         |
-| `docker pull`      | Baixar uma imagem                    |
-| `docker images`    | Listar imagens                       |
-| `docker build`     | Construir uma imagem                 |
-| `docker run`       | Criar e executar um container        |
-| `docker ps`        | Listar containers em execução        |
-| `docker ps -a`     | Listar todos os containers           |
-| `docker stop`      | Parar um container                   |
-| `docker start`     | Iniciar um container parado          |
-| `docker restart`   | Reiniciar um container               |
-| `docker logs`      | Visualizar logs                      |
-| `docker exec`      | Executar comando dentro do container |
-| `docker rm`        | Remover um container                 |
-| `docker rmi`       | Remover uma imagem                   |
+| Comando | Função | Argumento Obrigatório | Exemplo Prático |
+| :--- | :--- | :--- | :--- |
+| `docker --version` | Verifica a versão do Docker | *(nenhum)* | `docker --version` |
+| `docker --help` | Mostra ajuda de um subcomando | *(nenhum)* | `docker run --help` |
+| `docker pull` | Baixa uma imagem do registro | **Nome da Imagem** | `docker pull nginx:alpine` |
+| `docker images` | Lista as imagens baixadas localmente | *(nenhum)* | `docker images` |
+| `docker build` | Constrói uma imagem a partir de um Dockerfile | **Caminho do contexto** | `docker build -t minha-app .` |
+| `docker run` | Cria e executa um container a partir de uma imagem | **Nome da Imagem** | `docker run -d --name meu-site nginx` |
+| `docker ps` | Lista containers em execução | *(nenhum)* | `docker ps` |
+| `docker ps -a` | Lista **todos** os containers (inclusive parados) | *(nenhum)* | `docker ps -a` |
+| `docker stop` | Para um container em execução | **ID ou Nome** | `docker stop meu-site` |
+| `docker start` | Inicia um container que estava parado | **ID ou Nome** | `docker start meu-site` |
+| `docker restart` | Reinicia um container | **ID ou Nome** | `docker restart meu-site` |
+| `docker logs` | Exibe os logs (saída) do container | **ID ou Nome** | `docker logs -f meu-site` |
+| `docker exec` | Executa um comando interno no container | **ID ou Nome + Comando** | `docker exec -it meu-site bash` |
+| `docker rm` | Remove um container (deve estar parado) | **ID ou Nome** | `docker rm -f meu-site` |
+| `docker rmi` | Remove uma imagem baixada | **ID ou Nome da Imagem** | `docker rmi nginx:alpine` |
 
 ---
 
