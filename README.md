@@ -603,6 +603,18 @@ Ao final desta etapa, temos:
            │         :5000            │
            └──────────────────────────┘
 ```
+## Docker - Reiniciar container e atualizar aplicação
+
+### Quando a máquina reinicia e o container está parado
+
+Após reiniciar a máquina, o container geralmente fica no estado **Exited**. Verifique com `docker ps -a`, copie o CONTAINER ID (ou use o nome) e inicie com `docker start <CONTAINER_ID>` (exemplo: `docker start 7b47a6096aed`). Confirme que está rodando com `docker ps`.
+
+### Atualizando a aplicação (rebuild completo)
+
+Quando alterar o código e precisar atualizar a imagem/container, pare o container com `docker stop <CONTAINER_ID>` (exemplo: `docker stop 7b47a6096aed`), remova o container com `docker rm <CONTAINER_ID>` (exemplo: `docker rm 7b47a6096aed`), liste as imagens com `docker images` e remova a imagem antiga com `docker rmi minha-flask:latest`, construa a nova imagem sem cache com `docker build --no-cache -t minha-flask .` e execute o novo container com `docker run -d -p 5000:5000 --name meu-flask minha-flask`.
+
+> **Dica:** Você pode usar o nome do container (`meu-flask`) no lugar do ID na maioria dos comandos (`docker start meu-flask`, `docker stop meu-flask`, etc.).
+---
 
 ## Próxima etapa
 
